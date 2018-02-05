@@ -42,7 +42,7 @@ public class ProjectResource
 
 	private final ProjectRepository projectRepository;
 	
-	private MessageChannel channel;
+
 	
 
 	public ProjectResource(ProjectRepository projectRepository)
@@ -50,13 +50,6 @@ public class ProjectResource
 		this.projectRepository = projectRepository;
 	}
 	
-
-	@Autowired
-	public ProjectResource(@Qualifier("customChannel") MessageChannel channel,ProjectRepository projectRepository)
-	{
-		this.channel = channel;
-		this.projectRepository = projectRepository;
-	}
 
 	/**
 	 * POST /projects : Create a new project.
@@ -79,7 +72,7 @@ public class ProjectResource
 			throw new BadRequestAlertException("A new project cannot already have an ID", ENTITY_NAME, "idexists");
 		}
 		Project result = projectRepository.save(project);
-		channel.send(MessageBuilder.withPayload(result).build());
+		//channel.send(MessageBuilder.withPayload(result).build());
 		return ResponseEntity.created(new URI("/api/projects/" + result.getId()))
 				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString())).body(result);
 	}
@@ -106,7 +99,7 @@ public class ProjectResource
 			return createProject(project);
 		}
 		Project result = projectRepository.save(project);
-		channel.send(MessageBuilder.withPayload(result).build());
+		//channel.send(MessageBuilder.withPayload(result).build());
 		return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, project.getId().toString()))
 				.body(result);
 	}
