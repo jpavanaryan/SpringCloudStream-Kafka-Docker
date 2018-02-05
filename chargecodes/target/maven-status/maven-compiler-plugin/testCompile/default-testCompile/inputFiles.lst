@@ -1,0 +1,11 @@
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/LogsResourceIntTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/ChargeCodeProjectResourceIntTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/TestUtil.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/ProjectResourceIntTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/errors/ExceptionTranslatorTestController.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/util/PaginationUtilUnitTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/errors/ExceptionTranslatorIntTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/ProfileInfoResourceIntTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/config/WebConfigurerTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/web/rest/ChargeCodeResourceIntTest.java
+/home/pjadda/dockerapps/springcloudstrem-kafka/chargecodes/src/test/java/com/chargecodes/config/WebConfigurerTestController.java

@@ -1,0 +1,77 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAddressLabel">Create or edit a Address</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!address.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="address.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_streetName">Street Name</label>
+            <input type="text" class="form-control" name="streetName" id="field_streetName"
+                [(ngModel)]="address.streetName" required/>
+            <div [hidden]="!(editForm.controls.streetName?.dirty && editForm.controls.streetName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.streetName?.errors?.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_apartmentOrHouseNumber">Apartment Or House Number</label>
+            <input type="text" class="form-control" name="apartmentOrHouseNumber" id="field_apartmentOrHouseNumber"
+                [(ngModel)]="address.apartmentOrHouseNumber" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                [(ngModel)]="address.city" required/>
+            <div [hidden]="!(editForm.controls.city?.dirty && editForm.controls.city?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.city?.errors?.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_zipcode">Zipcode</label>
+            <input type="number" class="form-control" name="zipcode" id="field_zipcode"
+                [(ngModel)]="address.zipcode" required/>
+            <div [hidden]="!(editForm.controls.zipcode?.dirty && editForm.controls.zipcode?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zipcode?.errors?.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zipcode?.errors?.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_state">State</label>
+            <input type="text" class="form-control" name="state" id="field_state"
+                [(ngModel)]="address.state" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                [(ngModel)]="address.country" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

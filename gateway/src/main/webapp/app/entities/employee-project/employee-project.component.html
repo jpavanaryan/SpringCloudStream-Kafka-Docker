@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span>Employee Projects</span>
+        <button class="btn btn-primary float-right jh-create-entity create-employee-project" [routerLink]="['/', { outlets: { popup: ['employee-project-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Employee Project
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="employeeProjects">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Employee</span></th>
+            <th><span>Project</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let employeeProject of employeeProjects ;trackBy: trackId">
+                <td><a [routerLink]="['../employee-project', employeeProject.id ]">{{employeeProject.id}}</a></td>
+                <td>
+                    <div *ngIf="employeeProject.employee">
+                        <a [routerLink]="['../employee', employeeProject.employee?.id ]" >{{employeeProject.employee?.firstName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employeeProject.project">
+                        <a [routerLink]="['../project', employeeProject.project?.id ]" >{{employeeProject.project?.projectTitle}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../employee-project', employeeProject.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'employee-project/'+ employeeProject.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'employee-project/'+ employeeProject.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

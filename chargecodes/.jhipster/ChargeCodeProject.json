@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "chargecode",
+            "otherEntityName": "chargeCode",
+            "otherEntityField": "chargeCodeName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "projectTitle"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180205173759",
+    "entityTableName": "charge_code_project",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "microserviceName": "chargecodes"
+}

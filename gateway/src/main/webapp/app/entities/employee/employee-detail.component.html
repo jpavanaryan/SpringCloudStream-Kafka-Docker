@@ -1,0 +1,44 @@
+
+<div *ngIf="employee">
+    <h2><span>Employee</span> {{employee.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>First Name</span></dt>
+        <dd>
+            <span>{{employee.firstName}}</span>
+        </dd>
+        <dt><span>Last Name</span></dt>
+        <dd>
+            <span>{{employee.lastName}}</span>
+        </dd>
+        <dt><span>Middle Name</span></dt>
+        <dd>
+            <span>{{employee.middleName}}</span>
+        </dd>
+        <dt><span>Salary</span></dt>
+        <dd>
+            <span>{{employee.salary}}</span>
+        </dd>
+        <dt><span>Address</span></dt>
+        <dd>
+            <div *ngIf="employee.address">
+                <a [routerLink]="['/address', employee.address?.id]">{{employee.address?.streetName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

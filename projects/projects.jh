@@ -1,0 +1,57 @@
+entity Address
+{
+	streetName	String required,
+    apartmentOrHouseNumber	String,
+    city	String	required,
+    zipcode	Long	required,
+    state	String,
+    country	String
+}
+
+
+entity Employee
+{
+	firstName	String	required,
+    lastName	String	required,
+    middleName	String,
+    salary	Float,
+    
+}
+
+entity Project 
+{
+	projectName String	required,
+    projectTitle String	required,
+}
+
+entity EmployeeProject 
+{
+}
+
+entity Department 
+{
+	departmentName String	required
+}
+
+
+
+relationship ManyToOne 
+{
+    Employee{address(streetName)} to Address
+    Project{department(departmentName)} to Department
+}
+
+relationship OneToMany 
+{
+	Employee to EmployeeProject{employee(firstName)}
+    Project to EmployeeProject{project(projectTitle)}
+}
+
+microservice * with projects
+
+
+
+paginate Employee with pagination
+paginate Project with pagination
+
+

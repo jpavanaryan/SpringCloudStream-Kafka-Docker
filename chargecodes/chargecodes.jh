@@ -1,0 +1,35 @@
+entity ChargeCode
+{
+	chargeCodeName	String required,
+    chargeCodeLocation	String required,
+    chargeCodeStartDate	LocalDate,
+	chargeCodeEndDate	LocalDate
+}
+
+
+entity Project 
+{
+	projectName String	required,
+    projectTitle String	required,
+}
+
+entity ChargeCodeProject
+{
+
+}
+
+
+relationship OneToMany 
+{
+	ChargeCode to ChargeCodeProject{chargecode(chargeCodeName)}
+    Project to ChargeCodeProject{project(projectTitle)}
+}
+
+microservice * with chargecodes
+
+
+
+paginate ChargeCode with pagination
+paginate Project with pagination
+
+
