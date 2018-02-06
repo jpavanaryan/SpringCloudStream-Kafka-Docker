@@ -1,2 +1,2 @@
-# springcloudstream-kafka
-Kafka with Spring Cloud Stream on Docker
+# Spring Cloud Stream - Kafka - Docker
+Kafka with Spring Cloud Stream on Docker containers
