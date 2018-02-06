@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -42,7 +43,8 @@ public class ProjectResource
 
 	private final ProjectRepository projectRepository;
 	
-
+	@Autowired
+	private Source source;
 	
 
 	public ProjectResource(ProjectRepository projectRepository)
@@ -72,7 +74,7 @@ public class ProjectResource
 			throw new BadRequestAlertException("A new project cannot already have an ID", ENTITY_NAME, "idexists");
 		}
 		Project result = projectRepository.save(project);
-		//channel.send(MessageBuilder.withPayload(result).build());
+		source.output().send(MessageBuilder.withPayload(result).build());
 		return ResponseEntity.created(new URI("/api/projects/" + result.getId()))
 				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString())).body(result);
 	}
@@ -99,7 +101,7 @@ public class ProjectResource
 			return createProject(project);
 		}
 		Project result = projectRepository.save(project);
-		//channel.send(MessageBuilder.withPayload(result).build());
+		source.output().send(MessageBuilder.withPayload(result).build());
 		return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, project.getId().toString()))
 				.body(result);
 	}
