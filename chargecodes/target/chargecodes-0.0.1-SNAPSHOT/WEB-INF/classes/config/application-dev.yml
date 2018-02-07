@@ -45,11 +45,11 @@ spring:
                     zk-nodes: localhost
                     autoCreateTopics: false
             bindings:
-               customChannel:
+               output:
                   destination: project
                   content-type: application/json
                   group: project_group
-               subscribableChannel:
+               input:
                   destination: project
                   content-type: application/json
                   group: project_group
