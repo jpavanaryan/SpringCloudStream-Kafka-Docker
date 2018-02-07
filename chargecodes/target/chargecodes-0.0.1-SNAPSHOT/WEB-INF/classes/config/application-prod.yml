@@ -38,9 +38,16 @@ spring:
                 binder:
                     brokers: localhost
                     zk-nodes: localhost
+                    autoCreateTopics: false
             bindings:
-                output:
-                    destination: topic-jhipster
+               customChannel:
+                  destination: project
+                  content-type: application/json
+                  group: project_group
+               subscribableChannel:
+                  destination: project
+                  content-type: application/json
+                  group: project_group
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/chargecodes?useUnicode=true&characterEncoding=utf8&useSSL=false

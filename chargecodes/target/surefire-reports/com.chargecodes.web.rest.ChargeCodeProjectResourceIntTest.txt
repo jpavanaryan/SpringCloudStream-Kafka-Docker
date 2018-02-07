@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.chargecodes.web.rest.ChargeCodeProjectResourceIntTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.089 sec - in com.chargecodes.web.rest.ChargeCodeProjectResourceIntTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 63.336 sec - in com.chargecodes.web.rest.ChargeCodeProjectResourceIntTest

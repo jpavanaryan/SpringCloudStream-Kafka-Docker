@@ -8,8 +8,8 @@ com/chargecodes/web/rest/util/PaginationUtilUnitTest.class
 com/chargecodes/web/rest/errors/ExceptionTranslatorTestController$TestResponseStatusException.class
 com/chargecodes/config/WebConfigurerTest$MockServletRegistration.class
 com/chargecodes/web/rest/LogsResourceIntTest.class
-com/chargecodes/web/rest/TestUtil.class
 com/chargecodes/web/rest/errors/ExceptionTranslatorTestController.class
+com/chargecodes/web/rest/TestUtil.class
 com/chargecodes/web/rest/TestUtil$ZonedDateTimeMatcher.class
 com/chargecodes/config/WebConfigurerTest.class
 com/chargecodes/web/rest/ChargeCodeResourceIntTest.class

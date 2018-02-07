@@ -12,9 +12,9 @@ com/chargecodes/config/MetricsConfiguration.class
 com/chargecodes/web/rest/errors/ErrorConstants.class
 com/chargecodes/web/rest/LogsResource.class
 com/chargecodes/web/rest/errors/LoginAlreadyUsedException.class
-com/chargecodes/domain/ChargeCodeProject.class
 com/chargecodes/config/DateTimeFormatConfiguration.class
 com/chargecodes/web/rest/util/PaginationUtil.class
+com/chargecodes/domain/ChargeCodeProject.class
 com/chargecodes/config/Constants.class
 com/chargecodes/web/rest/errors/FieldErrorVM.class
 com/chargecodes/config/DefaultProfileUtil.class
@@ -37,12 +37,12 @@ com/chargecodes/config/LoggingAspectConfiguration.class
 com/chargecodes/web/rest/ProfileInfoResource$ProfileInfoVM.class
 com/chargecodes/web/rest/errors/InvalidPasswordException.class
 com/chargecodes/domain/PersistentAuditEvent_.class
-com/chargecodes/config/DatabaseConfiguration.class
 com/chargecodes/config/audit/AuditEventConverter.class
+com/chargecodes/config/DatabaseConfiguration.class
 com/chargecodes/security/SecurityUtils.class
 com/chargecodes/config/ApplicationProperties.class
-com/chargecodes/domain/ChargeCodeProject_.class
 com/chargecodes/web/rest/errors/EmailNotFoundException.class
+com/chargecodes/domain/ChargeCodeProject_.class
 com/chargecodes/config/CloudDatabaseConfiguration.class
 com/chargecodes/domain/ChargeCode.class
 com/chargecodes/ChargecodesApp.class
@@ -51,8 +51,8 @@ com/chargecodes/web/rest/ProjectResource.class
 com/chargecodes/web/rest/errors/EmailAlreadyUsedException.class
 com/chargecodes/domain/AbstractAuditingEntity_.class
 com/chargecodes/repository/ChargeCodeRepository.class
-com/chargecodes/domain/PersistentAuditEvent.class
 com/chargecodes/config/WebConfigurer.class
+com/chargecodes/domain/PersistentAuditEvent.class
 com/chargecodes/web/rest/util/HeaderUtil.class
 com/chargecodes/config/LoggingConfiguration$LogbackLoggerContextListener.class
 com/chargecodes/security/SpringSecurityAuditorAware.class
