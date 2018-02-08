@@ -10,11 +10,15 @@ import com.projects.web.rest.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -29,6 +33,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api")
+@EnableBinding(Source.class)
 public class EmployeeResource {
 
     private final Logger log = LoggerFactory.getLogger(EmployeeResource.class);
@@ -36,6 +41,9 @@ public class EmployeeResource {
     private static final String ENTITY_NAME = "employee";
 
     private final EmployeeRepository employeeRepository;
+    
+    @Autowired
+	private Source source;
 
     public EmployeeResource(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
@@ -56,6 +64,7 @@ public class EmployeeResource {
             throw new BadRequestAlertException("A new employee cannot already have an ID", ENTITY_NAME, "idexists");
         }
         Employee result = employeeRepository.save(employee);
+        //source.output().send(MessageBuilder.withPayload(result).build());
         return ResponseEntity.created(new URI("/api/employees/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -78,6 +87,7 @@ public class EmployeeResource {
             return createEmployee(employee);
         }
         Employee result = employeeRepository.save(employee);
+        //source.output().send(MessageBuilder.withPayload(result).build());
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, employee.getId().toString()))
             .body(result);

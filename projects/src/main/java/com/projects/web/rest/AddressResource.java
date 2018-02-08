@@ -28,7 +28,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api")
-
+@EnableBinding(Source.class)
 public class AddressResource {
 
     private final Logger log = LoggerFactory.getLogger(AddressResource.class);
@@ -36,7 +36,9 @@ public class AddressResource {
     private static final String ENTITY_NAME = "address";
 
     private final AddressRepository addressRepository;
-
+    
+    @Autowired
+	private Source source;
 
     public AddressResource(AddressRepository addressRepository) {
         this.addressRepository = addressRepository;
@@ -57,6 +59,7 @@ public class AddressResource {
             throw new BadRequestAlertException("A new address cannot already have an ID", ENTITY_NAME, "idexists");
         }
         Address result = addressRepository.save(address);
+        source.output().send(MessageBuilder.withPayload(result).build());
         return ResponseEntity.created(new URI("/api/addresses/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -79,6 +82,7 @@ public class AddressResource {
             return createAddress(address);
         }
         Address result = addressRepository.save(address);
+        source.output().send(MessageBuilder.withPayload(result).build());
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, address.getId().toString()))
             .body(result);

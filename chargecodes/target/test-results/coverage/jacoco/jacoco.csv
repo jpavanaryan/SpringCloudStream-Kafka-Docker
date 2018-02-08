@@ -17,6 +17,9 @@ Chargecodes,com.chargecodes.aop.logging,LoggingAspect,176,0,10,0,24,0,10,0,5,0
 Chargecodes,com.chargecodes.security.jwt,TokenProvider,151,39,2,0,42,11,4,2,3,2
 Chargecodes,com.chargecodes.security.jwt,JWTConfigurer,0,18,0,0,0,6,0,2,0,2
 Chargecodes,com.chargecodes.security.jwt,JWTFilter,47,6,8,0,11,3,6,1,2,1
+Chargecodes,com.chargecodes.messaging,Address,76,0,0,0,32,0,16,0,16,0
+Chargecodes,com.chargecodes.messaging,ConsumerService,18,0,0,0,4,0,2,0,2,0
+Chargecodes,com.chargecodes.messaging,Address_,3,0,0,0,1,0,1,0,1,0
 Chargecodes,com.chargecodes.security,SecurityUtils,102,0,4,0,25,0,14,0,12,0
 Chargecodes,com.chargecodes.security,SpringSecurityAuditorAware,5,3,0,0,1,1,1,1,1,1
 Chargecodes,com.chargecodes.security,AuthoritiesConstants,3,0,0,0,2,0,1,0,1,0

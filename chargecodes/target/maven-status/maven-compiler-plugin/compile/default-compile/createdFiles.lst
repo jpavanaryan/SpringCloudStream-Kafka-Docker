@@ -10,6 +10,7 @@ com/chargecodes/aop/logging/LoggingAspect.class
 com/chargecodes/security/jwt/TokenProvider.class
 com/chargecodes/config/MetricsConfiguration.class
 com/chargecodes/web/rest/errors/ErrorConstants.class
+com/chargecodes/messaging/ConsumerService.class
 com/chargecodes/web/rest/LogsResource.class
 com/chargecodes/web/rest/errors/LoginAlreadyUsedException.class
 com/chargecodes/config/DateTimeFormatConfiguration.class
@@ -36,6 +37,7 @@ com/chargecodes/web/rest/errors/ExceptionTranslator.class
 com/chargecodes/config/LoggingAspectConfiguration.class
 com/chargecodes/web/rest/ProfileInfoResource$ProfileInfoVM.class
 com/chargecodes/web/rest/errors/InvalidPasswordException.class
+com/chargecodes/messaging/Address_.class
 com/chargecodes/domain/PersistentAuditEvent_.class
 com/chargecodes/config/audit/AuditEventConverter.class
 com/chargecodes/config/DatabaseConfiguration.class
@@ -43,6 +45,7 @@ com/chargecodes/security/SecurityUtils.class
 com/chargecodes/config/ApplicationProperties.class
 com/chargecodes/web/rest/errors/EmailNotFoundException.class
 com/chargecodes/domain/ChargeCodeProject_.class
+com/chargecodes/messaging/Address.class
 com/chargecodes/config/CloudDatabaseConfiguration.class
 com/chargecodes/domain/ChargeCode.class
 com/chargecodes/ChargecodesApp.class
