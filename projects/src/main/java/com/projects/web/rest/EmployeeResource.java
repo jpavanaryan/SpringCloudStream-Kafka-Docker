@@ -64,7 +64,7 @@ public class EmployeeResource {
             throw new BadRequestAlertException("A new employee cannot already have an ID", ENTITY_NAME, "idexists");
         }
         Employee result = employeeRepository.save(employee);
-        //source.output().send(MessageBuilder.withPayload(result).build());
+        source.output().send(MessageBuilder.withPayload(result).build());
         return ResponseEntity.created(new URI("/api/employees/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -87,7 +87,7 @@ public class EmployeeResource {
             return createEmployee(employee);
         }
         Employee result = employeeRepository.save(employee);
-        //source.output().send(MessageBuilder.withPayload(result).build());
+        source.output().send(MessageBuilder.withPayload(result).build());
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, employee.getId().toString()))
             .body(result);

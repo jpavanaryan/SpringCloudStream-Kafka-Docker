@@ -1,35 +1,30 @@
 package com.chargecodes.messaging;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.validation.constraints.NotNull;
 
 @Embeddable
 public class Address
 {
 
-		@Column
+		
 	    private Long id;
 
-	    @NotNull
-	    @Column(nullable = false)
+	    
 	    private String streetName;
 
-	    @Column
+	    
 	    private String apartmentOrHouseNumber;
 
-	    @NotNull
-	    @Column(nullable = false)
+	   
 	    private String city;
 
-	    @NotNull
-	    @Column(nullable = false)
+	    
 	    private Long zipcode;
 
-	    @Column(name = "state")
+	    
 	    private String state;
 
-	    @Column(name = "country")
+	    
 	    private String country;
 
 	    

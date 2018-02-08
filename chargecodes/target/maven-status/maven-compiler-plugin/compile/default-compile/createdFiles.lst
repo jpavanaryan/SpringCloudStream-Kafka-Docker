@@ -46,6 +46,7 @@ com/chargecodes/config/ApplicationProperties.class
 com/chargecodes/web/rest/errors/EmailNotFoundException.class
 com/chargecodes/domain/ChargeCodeProject_.class
 com/chargecodes/messaging/Address.class
+com/chargecodes/messaging/Employee.class
 com/chargecodes/config/CloudDatabaseConfiguration.class
 com/chargecodes/domain/ChargeCode.class
 com/chargecodes/ChargecodesApp.class

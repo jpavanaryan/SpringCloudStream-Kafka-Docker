@@ -10,11 +10,17 @@ import org.springframework.cloud.stream.messaging.Sink;
 {
 	
 	@StreamListener(Sink.INPUT)
-	public void consume(Address address)
+	public void consume(Employee employee)
 	{
-<span class="nc" id="L15">		System.out.println(&quot;********************************  Message Received  ********************************  &quot;);</span>
-<span class="nc" id="L16">		System.out.println(&quot;Street Name: &quot;+address.getStreetName());</span>
-<span class="nc" id="L17">	}</span>
+<span class="nc" id="L15">		System.out.println(&quot;********************************  Message Received  ********************************  \n&quot;);</span>
+<span class="nc" id="L16">		System.out.println(&quot;First Name: &quot;+employee.getFirstName());</span>
+<span class="nc" id="L17">		System.out.println(&quot;LastName Name: &quot;+employee.getLastName());</span>
+<span class="nc" id="L18">		System.out.println(&quot;Middle Name: &quot;+employee.getMiddleName());</span>
+<span class="nc" id="L19">		System.out.println(&quot;Salary : &quot;+employee.getSalary());</span>
+<span class="nc" id="L20">		System.out.println(&quot;Id: &quot;+employee.getId());</span>
+<span class="nc" id="L21">		System.out.println(&quot;Street Name: &quot;+employee.getShippingAddress().getStreetName());</span>
+		
+<span class="nc" id="L23">	}</span>
 	
 	
 	
