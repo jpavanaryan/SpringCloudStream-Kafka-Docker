@@ -3,24 +3,28 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 
-
-
 @EnableBinding(Sink.class)
-<span class="nc" id="L9">public class ConsumerService</span>
+<span class="nc" id="L7">public class ConsumerService</span>
 {
 	
 	@StreamListener(Sink.INPUT)
 	public void consume(Employee employee)
 	{
-<span class="nc" id="L15">		System.out.println(&quot;********************************  Message Received  ********************************  \n&quot;);</span>
-<span class="nc" id="L16">		System.out.println(&quot;First Name: &quot;+employee.getFirstName());</span>
-<span class="nc" id="L17">		System.out.println(&quot;LastName Name: &quot;+employee.getLastName());</span>
-<span class="nc" id="L18">		System.out.println(&quot;Middle Name: &quot;+employee.getMiddleName());</span>
-<span class="nc" id="L19">		System.out.println(&quot;Salary : &quot;+employee.getSalary());</span>
-<span class="nc" id="L20">		System.out.println(&quot;Id: &quot;+employee.getId());</span>
-<span class="nc" id="L21">		System.out.println(&quot;Street Name: &quot;+employee.getShippingAddress().getStreetName());</span>
+<span class="nc" id="L13">		System.out.println(&quot;********************************  Message Received  ********************************  \n&quot;);</span>
+<span class="nc" id="L14">		System.out.println(&quot;First Name: &quot;+employee.getFirstName());</span>
+<span class="nc" id="L15">		System.out.println(&quot;LastName Name: &quot;+employee.getLastName());</span>
+<span class="nc" id="L16">		System.out.println(&quot;Middle Name: &quot;+employee.getMiddleName());</span>
+<span class="nc" id="L17">		System.out.println(&quot;Salary : &quot;+employee.getSalary());</span>
+<span class="nc" id="L18">		System.out.println(&quot;Id: &quot;+employee.getId());</span>
 		
-<span class="nc" id="L23">	}</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">		if(employee.getShippingAddress() == null)</span>
+			{
+<span class="nc" id="L22">				System.out.println(&quot;Address Object is  --&gt; &quot;+employee.getShippingAddress());</span>
+			}
+		else
+<span class="nc" id="L25">			System.out.println(&quot;Inside ChargeCodes --&gt; Street Name: &quot;+employee.getShippingAddress().getStreetName());</span>
+		
+<span class="nc" id="L27">	}</span>
 	
 	
 	

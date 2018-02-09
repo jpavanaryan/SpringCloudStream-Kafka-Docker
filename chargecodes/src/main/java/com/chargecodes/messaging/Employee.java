@@ -19,7 +19,7 @@ public class Employee
 	    private Float salary;
 
 	    @Embedded
-		private Address shippingAddress;
+		private Address address;
 	    //private Address shippingAddress;
 
 	    
@@ -43,7 +43,7 @@ public class Employee
 			this.lastName = lastName;
 			this.middleName = middleName;
 			this.salary = salary;
-			this.shippingAddress = shippingAddress;
+			this.address = shippingAddress;
 		}
 
 
@@ -111,13 +111,13 @@ public class Employee
 
 		public Address getShippingAddress()
 		{
-			return shippingAddress;
+			return address;
 		}
 
 
 		public void setShippingAddress(Address shippingAddress)
 		{
-			this.shippingAddress = shippingAddress;
+			this.address = shippingAddress;
 		}
 	    
 	    

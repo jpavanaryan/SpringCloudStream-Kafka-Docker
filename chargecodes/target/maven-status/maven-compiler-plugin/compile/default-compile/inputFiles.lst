@@ -36,7 +36,6 @@
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/config/MessagingConfiguration.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/config/LocaleConfiguration.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/security/SecurityUtils.java
-/Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/messaging/EmployeeDeserializer.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/errors/CustomParameterizedException.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/repository/package-info.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/package-info.java

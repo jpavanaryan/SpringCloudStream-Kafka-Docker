@@ -65,6 +65,7 @@ public class EmployeeResource {
         }
         Employee result = employeeRepository.save(employee);
         source.output().send(MessageBuilder.withPayload(result).build());
+        System.out.println("Inside Projects --> Street Name: "+result.getAddress().getStreetName());
         return ResponseEntity.created(new URI("/api/employees/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
