@@ -1,126 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Address.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Chargecodes</a> &gt; <a href="index.source.html" class="el_package">com.chargecodes.messaging</a> &gt; <span class="el_source">Address.java</span></div><h1>Address.java</h1><pre class="source lang-java linenums">package com.chargecodes.messaging;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 
-@Embeddable
 public class Address
 {
 
-	@Column(nullable = false)
-	    private Long id;
+	private Long id;
 
-	@Column(nullable = false)
-	    private String streetName;
+	private String streetName;
 
-	@Column(nullable = false)
-	    private String apartmentOrHouseNumber;
+	private String apartmentOrHouseNumber;
 
-	@Column(nullable = false)
-	    private String city;
+	private String city;
 
-	@Column(nullable = false)
-	    private Long zipcode;
+	private Long zipcode;
 
-	@Column(nullable = false)
-	    private String state;
+	private String state;
 
-	@Column(nullable = false)
-	    private String country;
+	private String country;
 
-	    
-	    
-	    public Address() {
-<span class="nc" id="L34">			super();</span>
-<span class="nc" id="L35">			id=0l;</span>
-<span class="nc" id="L36">		}</span>
-	    
-	    
-		public Address(Long id, String streetName, String apartmentOrHouseNumber, String city, Long zipcode,
-				String state, String country)
-		{
-<span class="nc" id="L42">			super();</span>
-<span class="nc" id="L43">			this.id = id;</span>
-<span class="nc" id="L44">			this.streetName = streetName;</span>
-<span class="nc" id="L45">			this.apartmentOrHouseNumber = apartmentOrHouseNumber;</span>
-<span class="nc" id="L46">			this.city = city;</span>
-<span class="nc" id="L47">			this.zipcode = zipcode;</span>
-<span class="nc" id="L48">			this.state = state;</span>
-<span class="nc" id="L49">			this.country = country;</span>
-<span class="nc" id="L50">		}</span>
+	public Address()
+	{
+<span class="nc" id="L23">		super();</span>
+<span class="nc" id="L24">		id = 0l;</span>
+<span class="nc" id="L25">	}</span>
 
-		public Long getId()
-		{
-<span class="nc" id="L54">			return id;</span>
-		}
+	public Address(Long id, String streetName, String apartmentOrHouseNumber, String city, Long zipcode, String state,
+			String country)
+	{
+<span class="nc" id="L30">		super();</span>
+<span class="nc" id="L31">		this.id = id;</span>
+<span class="nc" id="L32">		this.streetName = streetName;</span>
+<span class="nc" id="L33">		this.apartmentOrHouseNumber = apartmentOrHouseNumber;</span>
+<span class="nc" id="L34">		this.city = city;</span>
+<span class="nc" id="L35">		this.zipcode = zipcode;</span>
+<span class="nc" id="L36">		this.state = state;</span>
+<span class="nc" id="L37">		this.country = country;</span>
+<span class="nc" id="L38">	}</span>
 
-		public void setId(Long id)
-		{
-<span class="nc" id="L59">			this.id = id;</span>
-<span class="nc" id="L60">		}</span>
+	public Long getId()
+	{
+<span class="nc" id="L42">		return id;</span>
+	}
 
-		public String getStreetName()
-		{
-<span class="nc" id="L64">			return streetName;</span>
-		}
+	public void setId(Long id)
+	{
+<span class="nc" id="L47">		this.id = id;</span>
+<span class="nc" id="L48">	}</span>
 
-		public void setStreetName(String streetName)
-		{
-<span class="nc" id="L69">			this.streetName = streetName;</span>
-<span class="nc" id="L70">		}</span>
+	public String getStreetName()
+	{
+<span class="nc" id="L52">		return streetName;</span>
+	}
 
-		public String getApartmentOrHouseNumber()
-		{
-<span class="nc" id="L74">			return apartmentOrHouseNumber;</span>
-		}
+	public void setStreetName(String streetName)
+	{
+<span class="nc" id="L57">		this.streetName = streetName;</span>
+<span class="nc" id="L58">	}</span>
 
-		public void setApartmentOrHouseNumber(String apartmentOrHouseNumber)
-		{
-<span class="nc" id="L79">			this.apartmentOrHouseNumber = apartmentOrHouseNumber;</span>
-<span class="nc" id="L80">		}</span>
+	public String getApartmentOrHouseNumber()
+	{
+<span class="nc" id="L62">		return apartmentOrHouseNumber;</span>
+	}
 
-		public String getCity()
-		{
-<span class="nc" id="L84">			return city;</span>
-		}
+	public void setApartmentOrHouseNumber(String apartmentOrHouseNumber)
+	{
+<span class="nc" id="L67">		this.apartmentOrHouseNumber = apartmentOrHouseNumber;</span>
+<span class="nc" id="L68">	}</span>
 
-		public void setCity(String city)
-		{
-<span class="nc" id="L89">			this.city = city;</span>
-<span class="nc" id="L90">		}</span>
+	public String getCity()
+	{
+<span class="nc" id="L72">		return city;</span>
+	}
 
-		public Long getZipcode()
-		{
-<span class="nc" id="L94">			return zipcode;</span>
-		}
+	public void setCity(String city)
+	{
+<span class="nc" id="L77">		this.city = city;</span>
+<span class="nc" id="L78">	}</span>
 
-		public void setZipcode(Long zipcode)
-		{
-<span class="nc" id="L99">			this.zipcode = zipcode;</span>
-<span class="nc" id="L100">		}</span>
+	public Long getZipcode()
+	{
+<span class="nc" id="L82">		return zipcode;</span>
+	}
 
-		public String getState()
-		{
-<span class="nc" id="L104">			return state;</span>
-		}
+	public void setZipcode(Long zipcode)
+	{
+<span class="nc" id="L87">		this.zipcode = zipcode;</span>
+<span class="nc" id="L88">	}</span>
 
-		public void setState(String state)
-		{
-<span class="nc" id="L109">			this.state = state;</span>
-<span class="nc" id="L110">		}</span>
+	public String getState()
+	{
+<span class="nc" id="L92">		return state;</span>
+	}
 
-		public String getCountry()
-		{
-<span class="nc" id="L114">			return country;</span>
-		}
+	public void setState(String state)
+	{
+<span class="nc" id="L97">		this.state = state;</span>
+<span class="nc" id="L98">	}</span>
 
-		public void setCountry(String country)
-		{
-<span class="nc" id="L119">			this.country = country;</span>
-<span class="nc" id="L120">		}</span>
-	    
-	    
-	    
-	    
+	public String getCountry()
+	{
+<span class="nc" id="L102">		return country;</span>
+	}
+
+	public void setCountry(String country)
+	{
+<span class="nc" id="L107">		this.country = country;</span>
+<span class="nc" id="L108">	}</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

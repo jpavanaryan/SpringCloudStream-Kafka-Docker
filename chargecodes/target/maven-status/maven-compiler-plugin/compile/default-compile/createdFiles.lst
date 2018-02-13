@@ -37,7 +37,6 @@ com/chargecodes/web/rest/errors/ExceptionTranslator.class
 com/chargecodes/config/LoggingAspectConfiguration.class
 com/chargecodes/web/rest/ProfileInfoResource$ProfileInfoVM.class
 com/chargecodes/web/rest/errors/InvalidPasswordException.class
-com/chargecodes/messaging/Address_.class
 com/chargecodes/domain/PersistentAuditEvent_.class
 com/chargecodes/config/audit/AuditEventConverter.class
 com/chargecodes/config/DatabaseConfiguration.class

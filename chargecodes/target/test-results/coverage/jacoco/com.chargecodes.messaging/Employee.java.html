@@ -1,138 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Chargecodes</a> &gt; <a href="index.source.html" class="el_package">com.chargecodes.messaging</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package com.chargecodes.messaging;
 
-import javax.persistence.Embedded;
 
 public class Employee
 {
 
-	 	private Long id;
+	private Long id;
+
+	private String firstName;
+
+	private String lastName;
+
+	private String middleName;
+
+	private Float salary;
+
+	private Address address;
 
 
-	    private String firstName;
+	public Employee()
+	{
+<span class="nc" id="L22">		super();</span>
+<span class="nc" id="L23">	}</span>
 
+	public Employee(Long id, String firstName, String lastName, String middleName, Float salary, Address address)
+	{
+<span class="nc" id="L27">		super();</span>
+<span class="nc" id="L28">		this.id = id;</span>
+<span class="nc" id="L29">		this.firstName = firstName;</span>
+<span class="nc" id="L30">		this.lastName = lastName;</span>
+<span class="nc" id="L31">		this.middleName = middleName;</span>
+<span class="nc" id="L32">		this.salary = salary;</span>
+<span class="nc" id="L33">		this.address = address;</span>
+<span class="nc" id="L34">	}</span>
 
-	    private String lastName;
+	public Long getId()
+	{
+<span class="nc" id="L38">		return id;</span>
+	}
 
+	public void setId(Long id)
+	{
+<span class="nc" id="L43">		this.id = id;</span>
+<span class="nc" id="L44">	}</span>
 
-	    private String middleName;
+	public String getFirstName()
+	{
+<span class="nc" id="L48">		return firstName;</span>
+	}
 
-	    private Float salary;
+	public void setFirstName(String firstName)
+	{
+<span class="nc" id="L53">		this.firstName = firstName;</span>
+<span class="nc" id="L54">	}</span>
 
-	    @Embedded
-		private Address address;
-	    //private Address shippingAddress;
+	public String getLastName()
+	{
+<span class="nc" id="L58">		return lastName;</span>
+	}
 
-	    
-	    
-	    
-		public Employee()
-		{
-<span class="nc" id="L30">			super();</span>
-			// TODO Auto-generated constructor stub
-<span class="nc" id="L32">		}</span>
+	public void setLastName(String lastName)
+	{
+<span class="nc" id="L63">		this.lastName = lastName;</span>
+<span class="nc" id="L64">	}</span>
 
-		
-		
+	public String getMiddleName()
+	{
+<span class="nc" id="L68">		return middleName;</span>
+	}
 
-		public Employee(Long id, String firstName, String lastName, String middleName, Float salary,
-				Address shippingAddress)
-		{
-<span class="nc" id="L40">			super();</span>
-<span class="nc" id="L41">			this.id = id;</span>
-<span class="nc" id="L42">			this.firstName = firstName;</span>
-<span class="nc" id="L43">			this.lastName = lastName;</span>
-<span class="nc" id="L44">			this.middleName = middleName;</span>
-<span class="nc" id="L45">			this.salary = salary;</span>
-<span class="nc" id="L46">			this.address = shippingAddress;</span>
-<span class="nc" id="L47">		}</span>
+	public void setMiddleName(String middleName)
+	{
+<span class="nc" id="L73">		this.middleName = middleName;</span>
+<span class="nc" id="L74">	}</span>
 
+	public Float getSalary()
+	{
+<span class="nc" id="L78">		return salary;</span>
+	}
 
+	public void setSalary(Float salary)
+	{
+<span class="nc" id="L83">		this.salary = salary;</span>
+<span class="nc" id="L84">	}</span>
 
+	public Address getAddress()
+	{
+<span class="nc" id="L88">		return address;</span>
+	}
 
-		public Long getId()
-		{
-<span class="nc" id="L54">			return id;</span>
-		}
+	public void setAddress(Address address)
+	{
+<span class="nc" id="L93">		this.address = address;</span>
+<span class="nc" id="L94">	}</span>
 
+	@Override
+	public String toString()
+	{
+<span class="nc" id="L99">		return &quot;Employee{&quot; + &quot;id=&quot; + getId() + &quot;, firstName='&quot; + getFirstName() + &quot;'&quot; + &quot;, lastName='&quot; + getLastName()</span>
+<span class="nc" id="L100">				+ &quot;'&quot; + &quot;, middleName='&quot; + getMiddleName() + &quot;'&quot; + &quot;, salary=&quot; + getSalary() + &quot;}&quot;;</span>
+	}
 
-		public void setId(Long id)
-		{
-<span class="nc" id="L60">			this.id = id;</span>
-<span class="nc" id="L61">		}</span>
-
-
-		public String getFirstName()
-		{
-<span class="nc" id="L66">			return firstName;</span>
-		}
-
-
-		public void setFirstName(String firstName)
-		{
-<span class="nc" id="L72">			this.firstName = firstName;</span>
-<span class="nc" id="L73">		}</span>
-
-
-		public String getLastName()
-		{
-<span class="nc" id="L78">			return lastName;</span>
-		}
-
-
-		public void setLastName(String lastName)
-		{
-<span class="nc" id="L84">			this.lastName = lastName;</span>
-<span class="nc" id="L85">		}</span>
-
-
-		public String getMiddleName()
-		{
-<span class="nc" id="L90">			return middleName;</span>
-		}
-
-
-		public void setMiddleName(String middleName)
-		{
-<span class="nc" id="L96">			this.middleName = middleName;</span>
-<span class="nc" id="L97">		}</span>
-
-
-		public Float getSalary()
-		{
-<span class="nc" id="L102">			return salary;</span>
-		}
-
-
-		public void setSalary(Float salary)
-		{
-<span class="nc" id="L108">			this.salary = salary;</span>
-<span class="nc" id="L109">		}</span>
-
-
-		public Address getShippingAddress()
-		{
-<span class="nc" id="L114">			return address;</span>
-		}
-
-
-		public void setShippingAddress(Address shippingAddress)
-		{
-<span class="nc" id="L120">			this.address = shippingAddress;</span>
-<span class="nc" id="L121">		}</span>
-	    
-	    
-		 @Override
-		    public String toString() {
-<span class="nc" id="L126">		        return &quot;Employee{&quot; +</span>
-<span class="nc" id="L127">		            &quot;id=&quot; + getId() +</span>
-<span class="nc" id="L128">		            &quot;, firstName='&quot; + getFirstName() + &quot;'&quot; +</span>
-<span class="nc" id="L129">		            &quot;, lastName='&quot; + getLastName() + &quot;'&quot; +</span>
-<span class="nc" id="L130">		            &quot;, middleName='&quot; + getMiddleName() + &quot;'&quot; +</span>
-<span class="nc" id="L131">		            &quot;, salary=&quot; + getSalary() +</span>
-		            &quot;}&quot;;
-		    }
-	    
-	    
-	    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -17,15 +17,13 @@ public class ConsumerService
 		System.out.println("Salary : "+employee.getSalary());
 		System.out.println("Id: "+employee.getId());
 		
-		if(employee.getShippingAddress() == null)
+		if(employee.getAddress() == null)
 			{
-				System.out.println("Address Object is  --> "+employee.getShippingAddress());
+				System.out.println("Address Object is  --> "+employee.getAddress());
 			}
 		else
-			System.out.println("Inside ChargeCodes --> Street Name: "+employee.getShippingAddress().getStreetName());
+			System.out.println("Inside ChargeCodes --> Street Name: "+employee.getAddress().getStreetName());
 		
 	}
-	
-	
-	
+
 }
