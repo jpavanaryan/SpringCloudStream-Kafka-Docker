@@ -1,0 +1,14 @@
+bin/kafka-topics.sh --list --zookeeper 172.18.0.10:2181
+
+bin/kafka-topics.sh --describe --zookeeper 172.18.0.10:2181 --topic project
+
+bin/kafka-topics.sh --zookeeper 172.18.0.10:2181 --delete --topic project
+
+bin/kafka-topics.sh --create --zookeeper 172.18.0.10:2181 --replication-factor 1 --partitions 1 --topic greetings
+
+
+
+bin/kafka-console-producer.sh --broker-list 172.18.0.3:9092 --topic project
+
+bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.3:9092 --topic project --from-beginning
+
