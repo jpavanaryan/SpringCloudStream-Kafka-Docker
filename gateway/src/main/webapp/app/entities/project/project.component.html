@@ -19,6 +19,7 @@
             <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="projectName"><span>Project Name</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="projectTitle"><span>Project Title</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="department.departmentName"><span>Department</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -27,6 +28,11 @@
                 <td><a [routerLink]="['../project', project.id ]">{{project.id}}</a></td>
                 <td>{{project.projectName}}</td>
                 <td>{{project.projectTitle}}</td>
+                <td>
+                    <div *ngIf="project.department">
+                        <a [routerLink]="['../department', project.department?.id ]" >{{project.department?.departmentName}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

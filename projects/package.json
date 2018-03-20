@@ -12,5 +12,10 @@
   },
   "engines": {
     "node": ">=6.9.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.207.0",
+    "progress": "^2.0.0",
+    "uuid": "^3.2.1"
   }
 }

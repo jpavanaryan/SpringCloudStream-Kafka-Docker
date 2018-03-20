@@ -29,10 +29,10 @@
         <profile.swagger />
 
         <!-- Dependency versions -->
-        <jhipster-dependencies.version>0.1.7</jhipster-dependencies.version>
+        <jhipster-dependencies.version>0.1.8</jhipster-dependencies.version>
         <!-- The spring-boot version should match the one managed by
         https://mvnrepository.com/artifact/io.github.jhipster/jhipster-dependencies/${jhipster-dependencies.version} -->
-        <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
         <!-- The hibernate version should match the one managed by
         https://mvnrepository.com/artifact/io.github.jhipster/jhipster-dependencies/${jhipster-dependencies.version} -->
         <hibernate.version>5.2.12.Final</hibernate.version>
@@ -59,7 +59,6 @@
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
         <sonar-maven-plugin.version>3.2</sonar-maven-plugin.version>
-        <swagger-codegen-maven-plugin.version>2.2.3</swagger-codegen-maven-plugin.version>
 
         <!-- Sonar properties -->
         <sonar.exclusions>src/main/webapp/content/**/*.*, src/main/webapp/i18n/*.js, target/www/**/*.*</sonar.exclusions>
@@ -159,6 +158,10 @@
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-hibernate52</artifactId>
         </dependency>
         <dependency>
             <groupId>com.hazelcast</groupId>
@@ -614,33 +617,6 @@
                     <tag>latest</tag>
                     <contextDirectory>${project.build.directory}</contextDirectory>
                 </configuration>
-            </plugin>
-            <plugin>
-                <!--
-                    Plugin that provides API-first development using swagger-codegen to
-                    generate Spring-MVC endpoint stubs at compile time from a swagger definition file
-                -->
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-codegen-maven-plugin</artifactId>
-                <version>${swagger-codegen-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <inputSpec>${project.basedir}/src/main/resources/swagger/api.yml</inputSpec>
-                            <language>spring</language>
-                            <apiPackage>com.gateway.web.api</apiPackage>
-                            <modelPackage>com.gateway.web.api.model</modelPackage>
-                            <generateSupportingFiles>false</generateSupportingFiles>
-                            <configOptions>
-                                <interfaceOnly>true</interfaceOnly>
-                                <java8>true</java8>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <!-- jhipster-needle-maven-add-plugin -->
         </plugins>

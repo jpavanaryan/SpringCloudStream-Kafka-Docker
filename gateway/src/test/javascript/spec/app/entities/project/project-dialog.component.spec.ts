@@ -9,6 +9,7 @@ import { GatewayTestModule } from '../../../test.module';
 import { ProjectDialogComponent } from '../../../../../../main/webapp/app/entities/project/project-dialog.component';
 import { ProjectService } from '../../../../../../main/webapp/app/entities/project/project.service';
 import { Project } from '../../../../../../main/webapp/app/entities/project/project.model';
+import { DepartmentService } from '../../../../../../main/webapp/app/entities/department';
 
 describe('Component Tests', () => {
 
@@ -24,6 +25,7 @@ describe('Component Tests', () => {
                 imports: [GatewayTestModule],
                 declarations: [ProjectDialogComponent],
                 providers: [
+                    DepartmentService,
                     ProjectService
                 ]
             })

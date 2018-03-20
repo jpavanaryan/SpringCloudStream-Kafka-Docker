@@ -3,9 +3,15 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "chargeCodeProject",
-            "otherEntityName": "chargeCodeProject",
+            "relationshipName": "employeeProject",
+            "otherEntityName": "employeeProject",
             "otherEntityRelationshipName": "project"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "otherEntityField": "departmentName"
         }
     ],
     "fields": [
@@ -24,11 +30,11 @@
             ]
         }
     ],
-    "changelogDate": "20180205175058",
+    "changelogDate": "20180320171616",
     "entityTableName": "project",
     "dto": "no",
     "pagination": "pagination",
     "service": "no",
     "jpaMetamodelFiltering": false,
-    "microserviceName": "chargecodes"
+    "microserviceName": "projects"
 }

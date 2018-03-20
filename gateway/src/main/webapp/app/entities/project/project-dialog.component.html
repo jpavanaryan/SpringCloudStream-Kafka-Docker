@@ -35,6 +35,13 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label class="form-control-label" for="field_department">Department</label>
+            <select class="form-control" id="field_department" name="department" [(ngModel)]="project.department" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="departmentOption.id === project.department?.id ? project.department : departmentOption" *ngFor="let departmentOption of departments; trackBy: trackDepartmentById">{{departmentOption.departmentName}}</option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">

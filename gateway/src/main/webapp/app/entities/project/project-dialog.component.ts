@@ -4,11 +4,12 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiEventManager } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { Project } from './project.model';
 import { ProjectPopupService } from './project-popup.service';
 import { ProjectService } from './project.service';
+import { Department, DepartmentService } from '../department';
 
 @Component({
     selector: 'jhi-project-dialog',
@@ -19,15 +20,21 @@ export class ProjectDialogComponent implements OnInit {
     project: Project;
     isSaving: boolean;
 
+    departments: Department[];
+
     constructor(
         public activeModal: NgbActiveModal,
+        private jhiAlertService: JhiAlertService,
         private projectService: ProjectService,
+        private departmentService: DepartmentService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
+        this.departmentService.query()
+            .subscribe((res: HttpResponse<Department[]>) => { this.departments = res.body; }, (res: HttpErrorResponse) => this.onError(res.message));
     }
 
     clear() {
@@ -58,6 +65,14 @@ export class ProjectDialogComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
+    }
+
+    private onError(error: any) {
+        this.jhiAlertService.error(error.message, null, null);
+    }
+
+    trackDepartmentById(index: number, item: Department) {
+        return item.id;
     }
 }
 

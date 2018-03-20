@@ -11,7 +11,7 @@ export type EntityResponseType = HttpResponse<Project>;
 @Injectable()
 export class ProjectService {
 
-    private resourceUrl =  SERVER_API_URL + 'chargecodes/api/projects';
+    private resourceUrl =  SERVER_API_URL + 'projects/api/projects';
 
     constructor(private http: HttpClient) { }
 

@@ -12,6 +12,12 @@
         <dd>
             <span>{{project.projectTitle}}</span>
         </dd>
+        <dt><span>Department</span></dt>
+        <dd>
+            <div *ngIf="project.department">
+                <a [routerLink]="['/department', project.department?.id]">{{project.department?.departmentName}}</a>
+            </div>
+        </dd>
     </dl>
 
     <button type="submit"
