@@ -25,12 +25,14 @@
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/errors/InvalidPasswordException.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/ChargeCodeResource.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/LogsResource.java
+/Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/messaging/MessageSender.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/config/ThymeleafConfiguration.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/ProfileInfoResource.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/ApplicationWebXml.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/web/rest/ChargeCodeProjectResource.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/config/LoggingAspectConfiguration.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/domain/AbstractAuditingEntity.java
+/Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/messaging/Message.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/config/Constants.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/messaging/ConsumerService.java
 /Users/pjadda/dockerapps/SpringCloudStream-Kafka-Docker/chargecodes/src/main/java/com/chargecodes/config/MessagingConfiguration.java

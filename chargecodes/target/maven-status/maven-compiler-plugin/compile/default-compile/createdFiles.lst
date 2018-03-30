@@ -19,6 +19,7 @@ com/chargecodes/domain/ChargeCodeProject.class
 com/chargecodes/config/Constants.class
 com/chargecodes/web/rest/errors/FieldErrorVM.class
 com/chargecodes/config/DefaultProfileUtil.class
+com/chargecodes/messaging/Message.class
 com/chargecodes/repository/ChargeCodeProjectRepository.class
 com/chargecodes/web/rest/ProfileInfoResource.class
 com/chargecodes/web/rest/errors/BadRequestAlertException.class
@@ -37,6 +38,7 @@ com/chargecodes/web/rest/errors/ExceptionTranslator.class
 com/chargecodes/config/LoggingAspectConfiguration.class
 com/chargecodes/web/rest/ProfileInfoResource$ProfileInfoVM.class
 com/chargecodes/web/rest/errors/InvalidPasswordException.class
+com/chargecodes/messaging/MessageSender.class
 com/chargecodes/domain/PersistentAuditEvent_.class
 com/chargecodes/config/audit/AuditEventConverter.class
 com/chargecodes/config/DatabaseConfiguration.class
@@ -45,11 +47,13 @@ com/chargecodes/config/ApplicationProperties.class
 com/chargecodes/web/rest/errors/EmailNotFoundException.class
 com/chargecodes/domain/ChargeCodeProject_.class
 com/chargecodes/messaging/Address.class
+com/chargecodes/messaging/ConsumerService$2.class
 com/chargecodes/messaging/Employee.class
 com/chargecodes/config/CloudDatabaseConfiguration.class
 com/chargecodes/domain/ChargeCode.class
 com/chargecodes/ChargecodesApp.class
 com/chargecodes/domain/ChargeCode_.class
+com/chargecodes/messaging/ConsumerService$1.class
 com/chargecodes/web/rest/ProjectResource.class
 com/chargecodes/web/rest/errors/EmailAlreadyUsedException.class
 com/chargecodes/domain/AbstractAuditingEntity_.class

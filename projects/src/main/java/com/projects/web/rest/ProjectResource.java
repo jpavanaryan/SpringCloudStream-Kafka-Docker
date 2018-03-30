@@ -2,10 +2,14 @@ package com.projects.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.projects.domain.Project;
+import com.projects.messaging.Message;
+import com.projects.messaging.MessageSender;
 import com.projects.repository.ProjectRepository;
 import com.projects.web.rest.errors.BadRequestAlertException;
 import com.projects.web.rest.util.HeaderUtil;
 import com.projects.web.rest.util.PaginationUtil;
+
+
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +21,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -43,7 +46,7 @@ public class ProjectResource
 	private final ProjectRepository projectRepository;
 	
 	@Autowired
-	private Source source;
+	private MessageSender messageSender;
 	
 
 	public ProjectResource(ProjectRepository projectRepository)
@@ -73,7 +76,8 @@ public class ProjectResource
 			throw new BadRequestAlertException("A new project cannot already have an ID", ENTITY_NAME, "idexists");
 		}
 		Project result = projectRepository.save(project);
-		source.output().send(MessageBuilder.withPayload(result).build());
+		Message<Project> message=new Message<Project>("Project", result);
+		messageSender.send(message);
 		return ResponseEntity.created(new URI("/api/projects/" + result.getId()))
 				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString())).body(result);
 	}
@@ -100,7 +104,8 @@ public class ProjectResource
 			return createProject(project);
 		}
 		Project result = projectRepository.save(project);
-		source.output().send(MessageBuilder.withPayload(result).build());
+		Message<Project> message=new Message<Project>("Project", result);
+		messageSender.send(message);
 		return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, project.getId().toString()))
 				.body(result);
 	}

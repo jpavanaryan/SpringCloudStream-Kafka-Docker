@@ -1,12 +1,19 @@
 package com.chargecodes.messaging;
 
+import java.io.IOException;
+
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.chargecodes.domain.Project;
 import com.chargecodes.repository.ProjectRepository;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 @EnableBinding(Sink.class)
@@ -20,36 +27,29 @@ public class ConsumerService
         this.projectRepository = projectRepository;
     }
 	
-	@StreamListener(Sink.INPUT)
-	public void consume(Project project)
+	@StreamListener(target = Sink.INPUT, condition = "payload.messageType.toString()=='Project'")
+	@Transactional
+	public void consumeProject(String messageJson) throws JsonParseException, JsonMappingException, IOException
 	{
-		System.out.println("********************************  Message Received  ********************************  \n");
-		System.out.println("Project Name: " + project.getProjectName());
-		System.out.println("Project Title: " + project.getProjectName());
-
-		projectRepository.save(project);
+		Message<Project> message = new ObjectMapper().readValue(messageJson, new TypeReference<Message<Project>>(){});
+		Project project = message.getPayload();
 		
-		if (project == null)
-			{
-				System.out.println("Project is  null ");
-			}
-
-		/*
-		 * @StreamListener(Sink.INPUT) public void consume(Employee employee) {
-		 * System.out.
-		 * println("********************************  Message Received  ********************************  \n"
-		 * ); System.out.println("First Name: "+employee.getFirstName());
-		 * System.out.println("LastName Name: "+employee.getLastName());
-		 * System.out.println("Middle Name: "+employee.getMiddleName());
-		 * System.out.println("Salary : "+employee.getSalary());
-		 * System.out.println("Id: "+employee.getId());
-		 * 
-		 * if(employee.getAddress() == null) {
-		 * System.out.println("Address Object is  --> "+employee.getAddress());
-		 * } else
-		 * System.out.println("Inside ChargeCodes --> Street Name: "+employee.
-		 * getAddress().getStreetName());
-		 * 
-		 */}
+		System.out.println("********************************  Project Message Received  ********************************  ");
+		System.out.println("Project Name: " + project.getProjectName());
+		System.out.println("Project Title: " + project.getProjectTitle());
+	}
+	
+	
+	@StreamListener(target = Sink.INPUT, condition = "payload.messageType.toString()=='Address'")
+	@Transactional
+	public void consumeAddress(String messageJson) throws JsonParseException, JsonMappingException, IOException
+	{
+		Message<Address> message = new ObjectMapper().readValue(messageJson, new TypeReference<Message<Address>>(){});
+		Address address = message.getPayload();
+		
+		System.out.println("******************************** Address Message Received  ********************************  ");
+		System.out.println("Address Street: " + address.getStreetName());
+		System.out.println("Address City: " + address.getCity());
+	}
 
 }
