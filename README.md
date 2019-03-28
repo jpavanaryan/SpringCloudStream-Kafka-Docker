@@ -1,4 +1,7 @@
 # Spring Cloud Stream - Kafka - Docker
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pavankjadda/SpringCloudStream-Kafka-Docker.svg)](https://greenkeeper.io/)
+
 ### Kafka with Spring Cloud Stream on Docker containers
 
 This repository demonstrates Kafka message broker (send/receive messages) functionality using Spring Cloud Stream on Docker containers. Objects are sent and received between microservices with Kafka
