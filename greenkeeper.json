@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "chargecodes/package.json",
+        "docker-compose/package.json",
+        "gateway/package.json",
+        "projects/package.json"
+      ]
+    }
+  }
+}
